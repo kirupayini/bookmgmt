@@ -40,7 +40,7 @@ public class BookService{
     }
     public List<Book> getAll(){
         List<Book> bookList = new ArrayList<Book>();
-          for(Book book:booKRepo.values()) {
+          for(Book book:booKRepo.values()) {  
               bookList.add(book);
           }
           return bookList;
