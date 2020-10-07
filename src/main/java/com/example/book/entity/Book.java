@@ -1,10 +1,23 @@
 package com.example.book.entity;
 
-public class Book {
 
-    int bookId;
-    String bookName;
-    String bookAuthor;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name="books")
+public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int bookId;
+    @NotNull
+    private String bookName;
+    @NotNull
+    private String bookAuthor;
+
+    public Book() {
+
+    }
 
 
     public String getBookName() {
