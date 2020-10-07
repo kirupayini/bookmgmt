@@ -6,6 +6,8 @@ import com.example.book.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/book")
 public class BookController {
@@ -27,10 +29,10 @@ public class BookController {
     public Book updateBook(@RequestBody Book book,@PathVariable("id") int id){
         return bookService.updateBook(id, book);
     }
-    //@GetMapping("/findall")
-    //public Iterable<Book> getAll(){
-       // return bookService.getAll();
-    //}
+    @GetMapping("/findAll")
+    public List<Book> getAll(){
+        return bookService.getAll();
+    }
 
 
 
